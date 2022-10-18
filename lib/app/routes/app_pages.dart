@@ -1,7 +1,7 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
-import '../modules/detail_restaurant/bindings/detail_restaurant_binding.dart';
-import '../modules/detail_restaurant/views/detail_restaurant_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/list_restaurant/bindings/list_restaurant_binding.dart';
@@ -27,11 +27,11 @@ class AppPages {
       page: () => const ListRestaurantView(),
       binding: ListRestaurantBinding(),
     ),
-    GetPage(
-      name: _Paths.DETAIL_RESTAURANT,
-      page: () => const DetailRestaurantView(),
-      binding: DetailRestaurantBinding(),
-    ),
+    // GetPage(
+    //   name: _Paths.DETAIL_RESTAURANT,
+    //   page: () => const DetailRestaurantView(),
+    //   binding: DetailRestaurantBinding(),
+    // ),
     GetPage(
       name: _Paths.SEARCH_RESTAURANT,
       page: () => const SearchRestaurantView(),

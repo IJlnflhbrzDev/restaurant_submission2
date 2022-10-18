@@ -21,7 +21,9 @@ class ListRestaurantView extends GetView<ListRestaurantController> {
               message: 'Cari Restaurant',
               child: Material(
                 child: InkWell(
-                  onTap: () => Get.to(const SearchRestaurantView()),
+                  onTap: () => Get.to(
+                    const SearchRestaurantView(),
+                  ),
                   child: const Icon(
                     Icons.search,
                     color: Colors.black,

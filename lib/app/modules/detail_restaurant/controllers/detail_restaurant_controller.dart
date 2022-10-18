@@ -1,23 +1,27 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:get/get.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 
 class DetailRestaurantController extends GetxController {
-  //TODO: Implement DetailRestaurantController
+  //  https://restaurant-api.dicoding.dev/detail/id
+  var listBodyRestaurants;
+  var listBodyRestaurantsMenusFoods = [];
+  var listBodyRestaurantsMenusDrinks = [];
+  var idRestaurant = ' ';
+  Future<dynamic> getListRestaurant() async {
+    var response = await http.get(
+        Uri.parse('https://restaurant-api.dicoding.dev/detail/$idRestaurant'));
+    var responseJson = json.decode(response.body);
+    listBodyRestaurants = responseJson;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+    listBodyRestaurantsMenusFoods =
+        responseJson['restaurant']['menus']['foods'];
+    listBodyRestaurantsMenusDrinks =
+        responseJson['restaurant']['menus']['drinks'];
+
+    return listBodyRestaurants;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
