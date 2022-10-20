@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class SearchRestaurantController extends GetxController {
   final queryRestaurantsSearch = TextEditingController();
-  var queryInp = '';
+  var queryInp = ''.obs;
   var listBodyRestaurants;
 
   Future<dynamic> getListRestaurant() async {

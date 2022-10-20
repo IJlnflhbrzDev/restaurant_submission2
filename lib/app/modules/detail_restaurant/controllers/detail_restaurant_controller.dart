@@ -17,6 +17,7 @@ class DetailRestaurantController extends GetxController {
     var responseJson = json.decode(response.body);
     listBodyRestaurants = responseJson;
 
+    print(responseJson['restaurant']['menus']['foods']);
     listBodyRestaurantsMenusFoods =
         responseJson['restaurant']['menus']['foods'];
     listBodyRestaurantsMenusDrinks =
